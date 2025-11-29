@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusHub - Student Life Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">CH</span>
+                <span class="logo-text">CampusHub</span>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="pages/dashboard.html">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Complete Campus Companion</h1>
+            <p>Everything a student needs - academics, accommodation, career, and more</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="goToDashboard()">Get Started</button>
+                <button class="btn btn-secondary" onclick="smoothScroll('features')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our 7 Major Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Academics & Learning</h3>
+                <p>Find teammates, mentorship, and resources</p>
+                <a href="pages/academics.html" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏠</div>
+                <h3>Accommodation & Living</h3>
+                <p>Housing, roommates, food, and safety</p>
+                <a href="pages/accommodation.html" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Social & Well-being</h3>
+                <p>Community, events, and support systems</p>
+                <a href="#features" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Career & Skills</h3>
+                <p>Internships, jobs, and skill development</p>
+                <a href="pages/career.html" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>Finance & Money</h3>
+                <p>Budget management and earning opportunities</p>
+                <a href="pages/finance.html" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Campus Navigation</h3>
+                <p>Buildings, services, and admin processes</p>
+                <a href="#features" class="feature-link">Learn More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📢</div>
+                <h3>Communication Hub</h3>
+                <p>Centralized updates and announcements</p>
+                <a href="#features" class="feature-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <h2>Why Join CampusHub?</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3>50K+</h3>
+                <p>Active Students</p>
+            </div>
+            <div class="stat-box">
+                <h3>200+</h3>
+                <p>Universities</p>
+            </div>
+            <div class="stat-box">
+                <h3>1M+</h3>
+                <p>Problems Solved</p>
+            </div>
+            <div class="stat-box">
+                <h3>4.9/5</h3>
+                <p>Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Why Students Love Us</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <h3>✓ 24/7 Support</h3>
+                <p>Get help anytime from our community</p>
+            </div>
+            <div class="benefit-item">
+                <h3>✓ Verified Students</h3>
+                <p>Real people from your college</p>
+            </div>
+            <div class="benefit-item">
+                <h3>✓ Completely Free</h3>
+                <p>No hidden charges, no subscription</p>
+            </div>
+            <div class="benefit-item">
+                <h3>✓ Trusted Reviews</h3>
+                <p>Honest feedback from real students</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Get latest news and tips delivered to your email</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p id="newsletterMsg" style="display: none; margin-top: 10px; color: #06b6d4;"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <form class="contact-form" onsubmit="handleContact(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <p id="contactMsg" style="display: none; margin-top: 10px; color: #06b6d4;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="pages/dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 CampusHub. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
